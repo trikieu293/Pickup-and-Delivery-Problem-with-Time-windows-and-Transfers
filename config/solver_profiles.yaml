@@ -1,0 +1,26 @@
+# Solver profiles for different use cases
+
+quick:
+  description: "Fast solving for testing and development"
+  time_limit: 300  # 5 minutes
+  mip_gap: 0.05  # 5%
+  threads: 0
+
+standard:
+  description: "Balanced solving for most instances"
+  time_limit: 3600  # 1 hour
+  mip_gap: 0.01  # 1%
+  threads: 0
+
+thorough:
+  description: "Thorough solving for difficult instances"
+  time_limit: 7200  # 2 hours
+  mip_gap: 0.001  # 0.1%
+  threads: 0
+  symmetry: 2
+
+production:
+  description: "Production settings with strict time limits"
+  time_limit: 1800  # 30 minutes
+  mip_gap: 0.02  # 2%
+  threads: 4

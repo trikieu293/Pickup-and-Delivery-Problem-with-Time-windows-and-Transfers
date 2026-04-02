@@ -1,0 +1,33 @@
+# Default configuration for PDPTWT solver
+
+solver:
+  name: "gurobi"
+  time_limit: 3600  # seconds
+  mip_gap: 0.01  # 1%
+  threads: 0  # 0 = auto-detect
+  symmetry: 0  # 0 = auto, -1 = off, 1 = conservative, 2 = aggressive
+  log_to_console: true
+  log_file: null  # Set to path for file logging
+
+model:
+  formulation: "cortes2010"  # Options: cortes2010, rais2014, lyu2023
+  big_m_strategy: "auto"  # Options: auto, manual
+  big_m_value: 999  # Used when big_m_strategy = manual
+  big_m_multiplier: 1.5  # Used when big_m_strategy = auto
+
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  console: true
+  file: "logs/pdptwt.log"
+  format: "detailed"  # Options: simple, detailed, json
+
+output:
+  save_plots: true
+  save_solution: true
+  save_gap_evolution: true
+  results_dir: "results"
+  plot_format: "png"  # Options: png, pdf, svg
+
+data:
+  validate_on_load: true
+  cache_distance_matrix: true
